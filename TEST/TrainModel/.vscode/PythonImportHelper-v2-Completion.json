@@ -1,0 +1,644 @@
+[
+    {
+        "label": "mediapipe",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mediapipe",
+        "description": "mediapipe",
+        "detail": "mediapipe",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "handle_pose",
+        "description": "handle_pose",
+        "isExtraImport": true,
+        "detail": "handle_pose",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "handle_pose",
+        "description": "handle_pose",
+        "isExtraImport": true,
+        "detail": "handle_pose",
+        "documentation": {}
+    },
+    {
+        "label": "server",
+        "importPath": "grpc",
+        "description": "grpc",
+        "isExtraImport": true,
+        "detail": "grpc",
+        "documentation": {}
+    },
+    {
+        "label": "server",
+        "importPath": "grpc",
+        "description": "grpc",
+        "isExtraImport": true,
+        "detail": "grpc",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "PIL",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "PIL",
+        "description": "PIL",
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_angle",
+        "importPath": "TEST.TrainModel.handelPushUp",
+        "description": "TEST.TrainModel.handelPushUp",
+        "isExtraImport": true,
+        "detail": "TEST.TrainModel.handelPushUp",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "importPath": "pyexpat",
+        "description": "pyexpat",
+        "isExtraImport": true,
+        "detail": "pyexpat",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "detect",
+        "description": "detect",
+        "isExtraImport": true,
+        "detail": "detect",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "handelPushUp",
+        "description": "handelPushUp",
+        "isExtraImport": true,
+        "detail": "handelPushUp",
+        "documentation": {}
+    },
+    {
+        "label": "pyshine",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyshine",
+        "description": "pyshine",
+        "detail": "pyshine",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template_string",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "X",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "Dropout",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Sequential",
+        "importPath": "keras.models",
+        "description": "keras.models",
+        "isExtraImport": true,
+        "detail": "keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "detect",
+        "kind": 6,
+        "importPath": "detect",
+        "description": "detect",
+        "peekOfCode": "class detect:\n    def __init__(self,model):\n        self.model=model\n        self.mpPose = mp.solutions.pose\n        self.pose = self.mpPose.Pose()\n        self.mpDraw = mp.solutions.drawing_utils\n        self.handle_mediapipe=handle_pose\n    def detect_physical(self,image):\n        results = self.pose.process(image)\n        if results.pose_landmarks:",
+        "detail": "detect",
+        "documentation": {}
+    },
+    {
+        "label": "handlePushUp",
+        "kind": 6,
+        "importPath": "handelPushUp",
+        "description": "handelPushUp",
+        "peekOfCode": "class handlePushUp:\n    def __init__(self) -> None:\n        pass\ndef draw_result_pushUp_on_image(reps,stage,angle,elbow,img):\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    bottomLeftCornerOfText = (10, 30)\n    fontScale = 1\n    fontColor = (0, 255, 0)\n    thickness = 2\n    lineType = 2",
+        "detail": "handelPushUp",
+        "documentation": {}
+    },
+    {
+        "label": "draw_result_pushUp_on_image",
+        "kind": 2,
+        "importPath": "handelPushUp",
+        "description": "handelPushUp",
+        "peekOfCode": "def draw_result_pushUp_on_image(reps,stage,angle,elbow,img):\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    bottomLeftCornerOfText = (10, 30)\n    fontScale = 1\n    fontColor = (0, 255, 0)\n    thickness = 2\n    lineType = 2\n    cv2.rectangle(img, (0,0), (225,73), (245,117,16), -1)\n    cv2.putText(img, str(angle), \n                            tuple(np.multiply(elbow, [640, 480]).astype(int)), ",
+        "detail": "handelPushUp",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_angle",
+        "kind": 2,
+        "importPath": "handelPushUp",
+        "description": "handelPushUp",
+        "peekOfCode": "def calculate_angle(a,b,c):\n    a = np.array(a) # First\n    b = np.array(b) # Mid\n    c = np.array(c) # End\n    radians = np.arctan2(c[1]-b[1], c[0]-b[0]) - np.arctan2(a[1]-b[1], a[0]-b[0])\n    angle = np.abs(radians*180.0/np.pi)\n    if angle >180.0:\n        angle = 360-angle\n    return angle",
+        "detail": "handelPushUp",
+        "documentation": {}
+    },
+    {
+        "label": "handle_pose",
+        "kind": 6,
+        "importPath": "handle_pose",
+        "description": "handle_pose",
+        "peekOfCode": "class handle_pose:\n    def __init__(self):\n        self.mpPose = mp.solutions.pose\n        self.pose = self.mpPose.Pose()\n        self.mpDraw = mp.solutions.drawing_utils\n    def make_landmark_timestep(results):\n        c_lm = []\n        for id, lm in enumerate(results.pose_landmarks.landmark):\n            c_lm.append(lm.x)\n            c_lm.append(lm.y)",
+        "detail": "handle_pose",
+        "documentation": {}
+    },
+    {
+        "label": "make_landmark_timestep",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def make_landmark_timestep(results):\n    c_lm = []\n    for id, lm in enumerate(results.pose_landmarks.landmark):\n        c_lm.append(lm.x)\n        c_lm.append(lm.y)\n        c_lm.append(lm.z)\n        c_lm.append(lm.visibility)\n    return c_lm\ndef draw_landmark_on_image(mpDraw, results, img):\n    mpDraw.draw_landmarks(img, results.pose_landmarks, mpPose.POSE_CONNECTIONS)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "draw_landmark_on_image",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def draw_landmark_on_image(mpDraw, results, img):\n    mpDraw.draw_landmarks(img, results.pose_landmarks, mpPose.POSE_CONNECTIONS)\n    for id, lm in enumerate(results.pose_landmarks.landmark):\n        h, w, c = img.shape\n        cx, cy = int(lm.x * w), int(lm.y * h)\n        cv2.circle(img, (cx, cy), 5, (255, 0, 0), cv2.FILLED)\n    return img\ndef draw_result_detect_action_on_image(label,Time, img):\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    bottomLeftCornerOfText = (10, 30)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "draw_result_detect_action_on_image",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def draw_result_detect_action_on_image(label,Time, img):\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    bottomLeftCornerOfText = (10, 30)\n    fontScale = 1\n    fontColor = (0, 255, 0)\n    thickness = 2\n    lineType = 2\n    cv2.putText(img, label,\n                bottomLeftCornerOfText,\n                font,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "result_landmark",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def result_landmark(List_img):\n    # Khởi tạo thư viện mediapipe\n    mpPose = mp.solutions.pose\n    pose = mpPose.Pose()\n    lm_list = []\n    for i in List_img:\n        # Nhận diện pose\n        results = pose.process(i)\n        if results.pose_landmarks:\n            # Ghi nhận thông số khung xương",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "detect_movements",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def detect_movements(action,K):\n    global orderOfAction\n    if orderOfAction == action and K[action] == False:\n        return True\n    return False \n# set K[F,F,....,F]\ndef setK(lenK):\n    K=[]\n    for i in range(0,lenK):\n        K.append(False)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "setK",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def setK(lenK):\n    K=[]\n    for i in range(0,lenK):\n        K.append(False)\n    return K\n#dem nguoc thoi gian cua dong tac thuc hien\ndef countTime():\n    global Time\n    global stop_threed\n    while True:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "countTime",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def countTime():\n    global Time\n    global stop_threed\n    while True:\n        time.sleep(1)\n        Time=Time-1\n        print(Time)\n        if stop_threed == True:\n            break\n# cho chay da luong",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "draw_result_pushUp_on_image",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def draw_result_pushUp_on_image(reps,stage):\n    cv2.rectangle(img, (0,0), (225,73), (245,117,16), -1)\n    # Rep data\n    cv2.putText(img, \n                'REPS', (15,12), \n                cv2.FONT_HERSHEY_SIMPLEX, \n                0.5, (0,0,0), \n                1, \n                cv2.LINE_AA)\n    cv2.putText(img, str(reps), ",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "HOST",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "HOST = socket.gethostbyname(socket.gethostname())\nPORT = 80\nSERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    SERVER.bind((HOST,PORT))\n    print(f'* Running on http://{HOST}:{PORT}')\nexcept socket.error as e:\n    print(f'socket error: {e}')\n    print('socket error: %s' %(e))\ndef _start():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "PORT = 80\nSERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    SERVER.bind((HOST,PORT))\n    print(f'* Running on http://{HOST}:{PORT}')\nexcept socket.error as e:\n    print(f'socket error: {e}')\n    print('socket error: %s' %(e))\ndef _start():\n    SERVER.listen()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "SERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    SERVER.bind((HOST,PORT))\n    print(f'* Running on http://{HOST}:{PORT}')\nexcept socket.error as e:\n    print(f'socket error: {e}')\n    print('socket error: %s' %(e))\ndef _start():\n    SERVER.listen()\n    while True:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "server",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "server = threading.Thread(target=_start)\nserver.start()\n#*************************************************************************************\ncap = cv2.VideoCapture(0)\n#*************************************************************************************\nmpPose = mp.solutions.pose\npose = mpPose.Pose()\nmpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nclasses={'anantasana':[1,0,0,0],'bakasana':[0,1,0,0],'balasana':[0,0,1,0],'bhekasana':[0,0,0,1]}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "cap",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "cap = cv2.VideoCapture(0)\n#*************************************************************************************\nmpPose = mp.solutions.pose\npose = mpPose.Pose()\nmpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nclasses={'anantasana':[1,0,0,0],'bakasana':[0,1,0,0],'balasana':[0,0,1,0],'bhekasana':[0,0,0,1]}\nclasses1=['anantasana','bakasana','balasana','bhekasana']\ndef make_landmark_timestep(results):\n    c_lm = []",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "mpPose",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "mpPose = mp.solutions.pose\npose = mpPose.Pose()\nmpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nclasses={'anantasana':[1,0,0,0],'bakasana':[0,1,0,0],'balasana':[0,0,1,0],'bhekasana':[0,0,0,1]}\nclasses1=['anantasana','bakasana','balasana','bhekasana']\ndef make_landmark_timestep(results):\n    c_lm = []\n    for id, lm in enumerate(results.pose_landmarks.landmark):\n        c_lm.append(lm.x)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "pose",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "pose = mpPose.Pose()\nmpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nclasses={'anantasana':[1,0,0,0],'bakasana':[0,1,0,0],'balasana':[0,0,1,0],'bhekasana':[0,0,0,1]}\nclasses1=['anantasana','bakasana','balasana','bhekasana']\ndef make_landmark_timestep(results):\n    c_lm = []\n    for id, lm in enumerate(results.pose_landmarks.landmark):\n        c_lm.append(lm.x)\n        c_lm.append(lm.y)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "mpDraw",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "mpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nclasses={'anantasana':[1,0,0,0],'bakasana':[0,1,0,0],'balasana':[0,0,1,0],'bhekasana':[0,0,0,1]}\nclasses1=['anantasana','bakasana','balasana','bhekasana']\ndef make_landmark_timestep(results):\n    c_lm = []\n    for id, lm in enumerate(results.pose_landmarks.landmark):\n        c_lm.append(lm.x)\n        c_lm.append(lm.y)\n        c_lm.append(lm.z)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "models = tf.keras.models.load_model(\"model-test.h5\")\nclasses={'anantasana':[1,0,0,0],'bakasana':[0,1,0,0],'balasana':[0,0,1,0],'bhekasana':[0,0,0,1]}\nclasses1=['anantasana','bakasana','balasana','bhekasana']\ndef make_landmark_timestep(results):\n    c_lm = []\n    for id, lm in enumerate(results.pose_landmarks.landmark):\n        c_lm.append(lm.x)\n        c_lm.append(lm.y)\n        c_lm.append(lm.z)\n        c_lm.append(lm.visibility)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "counter",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "counter = 0 \nstage = None\ndata=\"1\"\nwhile (cap. isOpened()):\n    ret,img = cap.read()\n    results = pose.process(img)\n    if results.pose_landmarks:\n        # Ghi nhận thông số khung xương\n        lm = np.array(make_landmark_timestep(results))\n        # Vẽ khung xương lên ảnh",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "stage",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "stage = None\ndata=\"1\"\nwhile (cap. isOpened()):\n    ret,img = cap.read()\n    results = pose.process(img)\n    if results.pose_landmarks:\n        # Ghi nhận thông số khung xương\n        lm = np.array(make_landmark_timestep(results))\n        # Vẽ khung xương lên ảnh\n        img = draw_landmark_on_image(mpDraw, results,img)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def index():\n    \"\"\"Video streaming\"\"\"\n    #return render_template('index.html')\n    return render_template_string('''<html>\n<head>\n</head>\n<body>\n    <div>\n         <center><canvas id=\"canvas\" \"></canvas> </center>\n    </div>",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "video_feed",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def video_feed():\n    \"\"\"Video streaming route. Put this in the src attribute of an img tag.\"\"\"\n    return Response(gen(),\n                mimetype='multipart/x-mixed-replace; boundary=frame')\n#*****************************************************************************************************\nSERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    SERVER.bind((HOST,PORT))\n    print(f'* Running on http://{HOST}:{PORT}')\nexcept socket.error as e:",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "detect_movements",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def detect_movements(action,K):\n    global orderOfAction\n    if orderOfAction == action and K[action] == False:\n        return True\n    return False \n# set K[F,F,....,F]\ndef setK(lenK):\n    K=[]\n    for i in range(0,lenK):\n        K.append(False)",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "setK",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def setK(lenK):\n    K=[]\n    for i in range(0,lenK):\n        K.append(False)\n    return K\n#dem nguoc thoi gian cua dong tac thuc hien\ndef countTime():\n    global Time\n    global stop_threed\n    while True:",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "countTime",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def countTime():\n    global Time\n    global stop_threed\n    while True:\n        time.sleep(1)\n        Time=Time-1\n        print(Time)\n        if stop_threed == True:\n            break\n# cho chay da luong",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "draw_result_detect_action_on_image",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def draw_result_detect_action_on_image(label,Time, img):\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    bottomLeftCornerOfText = (10, 30)\n    fontScale = 1\n    fontColor = (0, 255, 0)\n    thickness = 2\n    lineType = 2\n    cv2.putText(img, label,\n                bottomLeftCornerOfText,\n                font,",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "draw_result_detect_yoga_on_image",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def draw_result_detect_yoga_on_image(label,Time,img):\n    font = cv2.FONT_HERSHEY_SIMPLEX\n    bottomLeftCornerOfText = (10, 30)\n    fontScale = 1\n    fontColor = (0, 255, 0)\n    thickness = 2\n    lineType = 2\n    cv2.putText(img, label,\n                bottomLeftCornerOfText,\n                font,",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "gen",
+        "kind": 2,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "def gen():\n    counter = 0 \n    stage = None\n    modeldetect=detect(models)\n    modeldetectyoga=detect(modelyoga)\n    feature=\"2\"\n    option_feature=\"squats\"\n    while (cap. isOpened()):\n        ret,img = cap.read()\n        results=pose.process(img)",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "HOST",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "HOST = socket.gethostbyname(socket.gethostname())\nPORT = 80\n#*****************************************************************************************************\napp = Flask(__name__)\n@app.route('/')\ndef index():\n    \"\"\"Video streaming\"\"\"\n    #return render_template('index.html')\n    return render_template_string('''<html>\n<head>",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "PORT = 80\n#*****************************************************************************************************\napp = Flask(__name__)\n@app.route('/')\ndef index():\n    \"\"\"Video streaming\"\"\"\n    #return render_template('index.html')\n    return render_template_string('''<html>\n<head>\n</head>",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef index():\n    \"\"\"Video streaming\"\"\"\n    #return render_template('index.html')\n    return render_template_string('''<html>\n<head>\n</head>\n<body>\n    <div>",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "SERVER = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\ntry:\n    SERVER.bind((HOST,PORT))\n    print(f'* Running on http://{HOST}:{PORT}')\nexcept socket.error as e:\n    print(f'socket error: {e}')\n    print('socket error: %s' %(e))\ndef _start():\n    SERVER.listen()\n    while True:",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "server",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "server = threading.Thread(target=_start)\nserver.start()\n#*************************************************************************************\ncap = cv2.VideoCapture(0)\ncap.set(cv2.CAP_PROP_BUFFERSIZE, 4)\ncap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)\ncap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)\ncap.set(cv2.CAP_PROP_FPS, 30)\n#*************************************************************************************\nmpPose = mp.solutions.pose",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "cap",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "cap = cv2.VideoCapture(0)\ncap.set(cv2.CAP_PROP_BUFFERSIZE, 4)\ncap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)\ncap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)\ncap.set(cv2.CAP_PROP_FPS, 30)\n#*************************************************************************************\nmpPose = mp.solutions.pose\npose = mpPose.Pose()\nmpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "mpPose",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "mpPose = mp.solutions.pose\npose = mpPose.Pose()\nmpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nmodelyoga = tf.keras.models.load_model(\"modelyoga.h5\")\nclasses=['anantasana','bakasana','balasana','bhekasana']\nclassesYoga=['1','2','3','4']\ndef detect_movements(action,K):\n    global orderOfAction\n    if orderOfAction == action and K[action] == False:",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "pose",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "pose = mpPose.Pose()\nmpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nmodelyoga = tf.keras.models.load_model(\"modelyoga.h5\")\nclasses=['anantasana','bakasana','balasana','bhekasana']\nclassesYoga=['1','2','3','4']\ndef detect_movements(action,K):\n    global orderOfAction\n    if orderOfAction == action and K[action] == False:\n        return True",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "mpDraw",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "mpDraw = mp.solutions.drawing_utils\nmodels = tf.keras.models.load_model(\"model-test.h5\")\nmodelyoga = tf.keras.models.load_model(\"modelyoga.h5\")\nclasses=['anantasana','bakasana','balasana','bhekasana']\nclassesYoga=['1','2','3','4']\ndef detect_movements(action,K):\n    global orderOfAction\n    if orderOfAction == action and K[action] == False:\n        return True\n    return False ",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "models = tf.keras.models.load_model(\"model-test.h5\")\nmodelyoga = tf.keras.models.load_model(\"modelyoga.h5\")\nclasses=['anantasana','bakasana','balasana','bhekasana']\nclassesYoga=['1','2','3','4']\ndef detect_movements(action,K):\n    global orderOfAction\n    if orderOfAction == action and K[action] == False:\n        return True\n    return False \n# set K[F,F,....,F]",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "modelyoga",
+        "kind": 5,
+        "importPath": "maintest",
+        "description": "maintest",
+        "peekOfCode": "modelyoga = tf.keras.models.load_model(\"modelyoga.h5\")\nclasses=['anantasana','bakasana','balasana','bhekasana']\nclassesYoga=['1','2','3','4']\ndef detect_movements(action,K):\n    global orderOfAction\n    if orderOfAction == action and K[action] == False:\n        return True\n    return False \n# set K[F,F,....,F]\ndef setK(lenK):",
+        "detail": "maintest",
+        "documentation": {}
+    },
+    {
+        "label": "read_File_Img",
+        "kind": 2,
+        "importPath": "model_building",
+        "description": "model_building",
+        "peekOfCode": "def read_File_Img(link):\n    Img_list=[]\n    for folder in os.listdir(link):\n        folder_path=os.path.join(link,folder)\n        list_filename_path=[]\n        for filename in os.listdir(folder_path):\n            filename_path=os.path.join(folder_path,filename)\n            label=filename_path.split('\\\\')[1]\n            img = cv2.imread(filename_path)\n            list_filename_path.append((img,classes[label]))",
+        "detail": "model_building",
+        "documentation": {}
+    },
+    {
+        "label": "make_landmark_timestep",
+        "kind": 2,
+        "importPath": "model_building",
+        "description": "model_building",
+        "peekOfCode": "def make_landmark_timestep(results):\n    c_lm = []\n    for id, lm in enumerate(results.pose_landmarks.landmark):\n        c_lm.append(lm.x)\n        c_lm.append(lm.y)\n        c_lm.append(lm.z)\n        c_lm.append(lm.visibility)\n    return c_lm\ndef result_landmark(List_img):\n    # Khởi tạo thư viện mediapipe",
+        "detail": "model_building",
+        "documentation": {}
+    },
+    {
+        "label": "result_landmark",
+        "kind": 2,
+        "importPath": "model_building",
+        "description": "model_building",
+        "peekOfCode": "def result_landmark(List_img):\n    # Khởi tạo thư viện mediapipe\n    mpPose = mp.solutions.pose\n    pose = mpPose.Pose()\n    lm_list = []\n    for i in List_img:\n        # Nhận diện pose\n        frameRGB = cv2.cvtColor(i[0], cv2.COLOR_BGR2RGB)\n        results = pose.process(frameRGB)\n        if results.pose_landmarks:",
+        "detail": "model_building",
+        "documentation": {}
+    },
+    {
+        "label": "model_trainning_first",
+        "kind": 5,
+        "importPath": "model_building",
+        "description": "model_building",
+        "peekOfCode": "model_trainning_first = tf.keras.models.Sequential([\n                                                    tf.keras.layers.Input(shape=(132,)),\n                                                    tf.keras.layers.Dense(128),\n                                                    tf.keras.layers.Dense(32),\n                                                    tf.keras.layers.Dense(16),\n                                                    tf.keras.layers.Dense(4, activation='softmax')\n                                                    ])\nmodel_trainning_first.summary()\nmodel_trainning_first.compile(optimizer='adam',\n                              loss='categorical_crossentropy',",
+        "detail": "model_building",
+        "documentation": {}
+    }
+]
